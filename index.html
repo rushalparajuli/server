@@ -1,21 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Welcome to rushalparajuli.com.np</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rushal Parajuli</title>
     <style>
-      body {
-        background: #fafafa;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px;
+      :root {
+        --bg-light: #f4f6f9;
+        --text-light: #333;
+        --primary: #0077b6;
+        --secondary: #caf0f8;
+        --bg-dark: #1a1a1a;
+        --text-dark: #f1f1f1;
+        --nav-dark: #333;
       }
-      h1 {
-        color: #333;
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: var(--bg-light);
+        color: var(--text-light);
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: var(--primary);
+        color: white;
+        padding: 20px 0;
+        font-size: 28px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        background: var(--secondary);
+        padding: 10px 0;
+        gap: 30px;
+        transition: background 0.3s;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s, transform 0.3s;
+      }
+
+      nav a:hover {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: auto;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .skills img {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      }
+
+      .skills img:hover {
+        transform: scale(1.2);
+      }
+
+      .contact a {
+        display: inline-block;
+        margin: 8px;
+        padding: 5px 10px;
+        color: var(--primary);
+        text-decoration: none;
+        border: 1px solid var(--primary);
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .contact a:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* Dark Mode */
+      body.dark {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+      }
+      body.dark nav {
+        background: var(--nav-dark);
+      }
+      body.dark nav a {
+        color: var(--text-dark);
+      }
+      body.dark nav a:hover {
+        background: var(--text-dark);
+        color: var(--bg-dark);
+      }
+      body.dark header {
+        background: #222;
+      }
+      body.dark .contact a {
+        border-color: var(--text-dark);
+        color: var(--text-dark);
+      }
+      body.dark .contact a:hover {
+        background: var(--text-dark);
+        color: var(--bg-dark);
+      }
+
+      /* Dark Mode Toggle Button */
+      .toggle-btn {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .toggle-btn:hover {
+        background: #0096c7;
+        transform: scale(1.1);
       }
     </style>
   </head>
   <body>
-    <h1>Hello Everyone! 👋</h1>
-    <p>Welcome to my website rushalparajuli.com.np</p>
+    <header>Warm Welcome to You</header>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+      <a href="#activities">Activities</a>
+    </nav>
+
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        My name is <b>Rushal Parajuli</b>. I studied my school level at
+        <b>Shree Nawa Kiran Vidya Mandir</b> in Jhapa, completed my +2 in
+        Science at <b>Prasadi Academy</b> in Lalitpur, and I am currently
+        pursuing <b>Computer Engineering</b> at
+        <b>Kantipur Engineering College</b>, Dhapakhel, Lalitpur.
+      </p>
+
+      <h3>My Skills</h3>
+      <div class="skills">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="GitHub"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          alt="Node.js"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg"
+          alt="Nuxt.js"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+          alt="MongoDB"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          alt="React"
+        />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/732/732220.png"
+          alt="Excel"
+        />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/906/906324.png"
+          alt="Fullstack"
+        />
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Phone: <a href="tel:9742528298">9742528298</a></p>
+      <h3>Social Links</h3>
+      <div class="contact">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities">
+      <h2>Activities</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <script>
+      // Dark Mode Toggle
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+      }
+
+      // Reveal sections on scroll
+      const sections = document.querySelectorAll("section");
+      const revealOnScroll = () => {
+        sections.forEach((sec) => {
+          const secTop = sec.getBoundingClientRect().top;
+          if (secTop < window.innerHeight - 100) {
+            sec.classList.add("visible");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    </script>
   </body>
 </html>
